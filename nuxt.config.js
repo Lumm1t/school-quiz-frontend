@@ -23,7 +23,6 @@ export default {
   plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
     '~/components/atoms',
     '~/components/molecules',
@@ -53,7 +52,7 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
