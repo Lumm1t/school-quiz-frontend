@@ -1,5 +1,5 @@
 <template>
   <div>
-    <QuizData />
+    <QuizLogin />
   </div>
 </template>
