@@ -1,0 +1,3 @@
+<template>
+  <QuizQuestion />
+</template>
