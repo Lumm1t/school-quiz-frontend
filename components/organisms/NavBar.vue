@@ -1,11 +1,11 @@
 <template>
-  <v-card>
-    <v-toolbar dense>
+  <div>
+    <v-app-bar elevate-on-scroll>
       <v-spacer></v-spacer>
 
       <ThemeBtn />
-    </v-toolbar>
-  </v-card>
+    </v-app-bar>
+  </div>
 </template>
 
 <script>
