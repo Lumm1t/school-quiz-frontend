@@ -1,13 +1,13 @@
 <template>
-  <v-card width="500" class="mx-auto mt-5">
-    <v-card-title class="pb-0">
+  <v-card>
+    <v-card-title>
       <h1>School quiz</h1>
     </v-card-title>
 
-    <v-divider></v-divider>
-
     <v-card-text>
       Podaj imię, nazwisko oraz kod dostępu.
+
+      <v-divider></v-divider>
 
       <v-form>
         <v-text-field
@@ -36,8 +36,8 @@
       </v-form>
     </v-card-text>
 
-    <v-card-actions>
-      <v-btn color="info">Rozpocznij</v-btn>
+    <v-card-actions class="d-flex justify-end">
+      <v-btn color="primary">Rozpocznij</v-btn>
     </v-card-actions>
   </v-card>
 </template>

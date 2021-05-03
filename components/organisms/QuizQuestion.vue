@@ -1,6 +1,6 @@
 <template>
   <v-card width="700" class="mx-auto mt-5">
-    <v-card-title class="pb-0">
+    <v-card-title>
       <h3>1/1 - pytanie</h3>
     </v-card-title>
 
