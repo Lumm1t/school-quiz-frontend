@@ -46,13 +46,12 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  data() {
-    return {
-      showAccessCode: false,
-      firstName: '',
-      lastName: '',
-      accessCode: '',
-    }
-  },
+  name: 'QuizLogin',
+  data: () => ({
+    showAccessCode: false,
+    firstName: '',
+    lastName: '',
+    accessCode: '',
+  }),
 })
 </script>

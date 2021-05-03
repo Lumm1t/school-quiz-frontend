@@ -10,15 +10,17 @@
   </v-tooltip>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
+
 import { mapMutations } from 'vuex'
 import setupTheme from '@/assets/setupTheme'
 
-export default {
+export default Vue.extend({
   name: 'ThemeBtn',
   mounted() {
     setupTheme.call(this)
   },
   methods: mapMutations(['changeTheme']),
-}
+})
 </script>

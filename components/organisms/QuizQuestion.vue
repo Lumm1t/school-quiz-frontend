@@ -19,13 +19,13 @@
   </v-card>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
   name: 'QuizQuestion',
-  data() {
-    return {
-      radios: [],
-    }
-  },
-}
+  data: () => ({
+    radios: [],
+  }),
+})
 </script>
