@@ -1,11 +1,11 @@
 <template>
-  <v-card>
+  <v-card v-if="answers.length">
     <v-card-title>
       <h3>Pytanie {{ currentQuestion }}/{{ questionsLength }}</h3>
     </v-card-title>
 
     <v-card-text>
-      {{ questions[currentQuestionIndex].question }}
+      {{ questions[currentQuestion - 1].question }}
 
       <v-divider></v-divider>
 
@@ -13,7 +13,7 @@
         <!-- single -->
         <v-radio-group
           v-if="questions[currentQuestionIndex].type === 'single'"
-          v-model="chosen[currentQuestionIndex]"
+          v-model="answers[currentQuestionIndex].answer"
         >
           <v-radio
             v-for="(answer, i) in questions[currentQuestionIndex].answers"
@@ -31,7 +31,7 @@
           <v-checkbox
             v-for="(answer, i) in questions[currentQuestionIndex].answers"
             :key="i"
-            v-model="chosen[currentQuestionIndex]"
+            v-model="answers[currentQuestionIndex].answer"
             :label="answer"
             :value="i"
             class="ma-0 pa-0"
@@ -45,7 +45,7 @@
           md="6"
         >
           <v-textarea
-            v-model="chosen[currentQuestionIndex]"
+            v-model="answers[currentQuestionIndex].answer"
             solo
             label="Odpowiedź"
           ></v-textarea>
@@ -59,35 +59,11 @@
           Powrót
         </v-btn>
 
-        <v-btn
-          v-if="isTheLast"
-          color="primary"
-          @click="
-            submitAnswer(
-              currentQuestionIndex,
-              questions[currentQuestionIndex].id,
-              chosen[currentQuestionIndex]
-            )
-            checkAnswers()
-          "
-        >
+        <v-btn v-if="isTheLast" color="primary" @click="submitAnswers">
           Wyślij
         </v-btn>
 
-        <v-btn
-          v-else
-          color="primary"
-          @click="
-            submitAnswer(
-              currentQuestionIndex,
-              questions[currentQuestionIndex].id,
-              chosen[currentQuestionIndex]
-            )
-            ++currentQuestion
-          "
-        >
-          Dalej
-        </v-btn>
+        <v-btn v-else color="primary" @click="++currentQuestion"> Dalej </v-btn>
       </div>
 
       <v-col cols="2">
@@ -128,11 +104,13 @@ export default Vue.extend({
       },
     ],
     answers: [] as object[],
-    chosen: [] as object[],
   }),
   computed: {
     questionsLength(): number {
       return this.questions.length
+    },
+    currentQuestionIndex(): number {
+      return this.currentQuestion - 1
     },
     items(): number[] {
       // array from 1 to n
@@ -144,30 +122,19 @@ export default Vue.extend({
     isTheFirst(): boolean {
       return this.currentQuestion === 1
     },
-    currentQuestionIndex(): number {
-      return this.currentQuestion - 1
-    },
   },
   mounted() {
     // my hope is that this code is so awful I'm never allowed to write array of objects logic again.
-    this.questions.forEach((question, i) => {
-      if (question.type === 'multi') {
-        this.chosen[i] = []
-      }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    this.questions.forEach((el, i) => {
+      this.answers.push({
+        id: this.questions[i].id,
+        answer: [],
+      })
     })
   },
   methods: {
-    submitAnswer(
-      currentQuestion: number,
-      id: string,
-      answer: number | number[] | string | object
-    ) {
-      this.answers[currentQuestion] = {
-        id,
-        answer,
-      }
-    },
-    checkAnswers() {
+    submitAnswers() {
       console.log(this.answers)
     },
   },
