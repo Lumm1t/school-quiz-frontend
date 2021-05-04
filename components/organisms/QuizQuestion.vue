@@ -125,12 +125,16 @@ export default Vue.extend({
   },
   mounted() {
     // my hope is that this code is so awful I'm never allowed to write array of objects logic again.
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    this.questions.forEach((el, i) => {
+    this.questions.forEach((question, i) => {
       this.answers.push({
         id: this.questions[i].id,
-        answer: [],
+        answer: null,
       })
+
+      if (question.type === 'multi') {
+        // @ts-expect-error
+        this.answers[i].answer = []
+      }
     })
   },
   methods: {
