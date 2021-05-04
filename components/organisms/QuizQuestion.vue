@@ -71,17 +71,17 @@ export default Vue.extend({
     answers: [],
   }),
   computed: {
-    questionsLength() {
+    questionsLength(): number {
       return this.questions.length
     },
-    items() {
+    items(): number[] {
       // array from 1 to n
       return [...Array(this.questionsLength).keys()].map((i) => i + 1)
     },
-    isTheLast() {
+    isTheLast(): boolean {
       return this.currentQuestion === this.questionsLength
     },
-    isTheFirst() {
+    isTheFirst(): boolean {
       return this.currentQuestion === 1
     },
   },
