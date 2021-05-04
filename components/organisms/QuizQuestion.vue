@@ -5,7 +5,7 @@
     </v-card-title>
 
     <v-card-text>
-      {{ questions[currentQuestion - 1].question }}
+      {{ questions[currentQuestionIndex].question }}
 
       <v-divider></v-divider>
 
