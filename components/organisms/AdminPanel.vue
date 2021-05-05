@@ -45,7 +45,7 @@ import Vue from 'vue'
 
 export default Vue.extend({
   data: () => ({
-    drawer: null,
+    drawer: undefined,
     currentPanel: 0,
   }),
 })

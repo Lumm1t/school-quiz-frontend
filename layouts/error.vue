@@ -19,7 +19,7 @@ export default Vue.extend({
   props: {
     error: {
       type: Object,
-      default: null,
+      default: undefined,
     },
   },
   data: () => ({
