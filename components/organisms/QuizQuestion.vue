@@ -114,7 +114,9 @@ export default Vue.extend({
     },
     items(): number[] {
       // array from 1 to n
-      return [...Array(this.questionsLength).keys()].map((i) => i + 1)
+      return [...Array.from({ length: this.questionsLength }).keys()].map(
+        (i) => i + 1
+      )
     },
     isTheLast(): boolean {
       return this.currentQuestion === this.questionsLength
@@ -125,17 +127,17 @@ export default Vue.extend({
   },
   mounted() {
     // my hope is that this code is so awful I'm never allowed to write array of objects logic again.
-    this.questions.forEach((question, i) => {
+    for (const [i, question] of this.questions.entries()) {
       this.answers.push({
         id: this.questions[i].id,
-        answer: null,
+        answer: undefined,
       })
 
       if (question.type === 'multi') {
         // @ts-expect-error
         this.answers[i].answer = []
       }
-    })
+    }
   },
   methods: {
     submitAnswers() {
