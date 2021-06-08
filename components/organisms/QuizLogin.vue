@@ -37,7 +37,7 @@
     </v-card-text>
 
     <v-card-actions class="d-flex justify-end">
-      <v-btn color="primary">Rozpocznij</v-btn>
+      <v-btn color="primary" @click="startExam">Rozpocznij</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -53,5 +53,12 @@ export default Vue.extend({
     lastName: '',
     accessCode: '',
   }),
+  methods: {
+    startExam() {
+      console.log(this.firstName, this.lastName, this.accessCode)
+
+      this.$router.push(`/quiz`)
+    },
+  },
 })
 </script>
