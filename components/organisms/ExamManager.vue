@@ -12,7 +12,7 @@
       </v-card-text>
 
       <v-card-actions class="d-flex align-center">
-        <v-btn color="primary" to="/admin/new-exam">
+        <v-btn color="primary" to="/admin/exams-manager/new-exam">
           Nowy test
           <v-icon right> mdi-plus </v-icon>
         </v-btn>

@@ -34,21 +34,36 @@ export default Vue.extend({
       drawer: undefined,
       links: [
         {
-          title: 'Menadżer testów',
+          title: 'Ustawienia wstępne',
           icon: 'mdi-note-search',
-          link: (this as any).getLink('exams-manager'),
+          link: (this as any).getLink('basic-settings'),
         },
         {
-          title: 'Zarządzaj panelem',
+          title: 'Menadżer pytań',
           icon: 'mdi-account-cog',
-          link: (this as any).getLink('settings'),
+          link: (this as any).getLink('question-manager'),
+        },
+        {
+          title: 'Parametry czasowe',
+          icon: 'mdi-account-cog',
+          link: (this as any).getLink('time-parameters'),
+        },
+        {
+          title: 'Dostęp do testu',
+          icon: 'mdi-account-cog',
+          link: (this as any).getLink('test-access'),
+        },
+        {
+          title: 'Wyniki',
+          icon: 'mdi-account-cog',
+          link: (this as any).getLink('exam-results'),
         },
       ],
     }
   },
   methods: {
     getLink(link: string) {
-      return `/admin/${link}`
+      return `/admin/exams/${this.$route.params.slug}/${link}`
     },
   },
 })

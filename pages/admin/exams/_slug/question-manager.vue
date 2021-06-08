@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>question manager</div>
 </template>
 
 <script lang="ts">
@@ -7,8 +7,5 @@ import Vue from 'vue'
 
 export default Vue.extend({
   layout: 'admin-exam',
-  beforeCreate() {
-    this.$router.push('/admin/exams-manager')
-  },
 })
 </script>
