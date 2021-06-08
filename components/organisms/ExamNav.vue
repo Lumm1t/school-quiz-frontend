@@ -35,27 +35,27 @@ export default Vue.extend({
       links: [
         {
           title: 'Ustawienia wstępne',
-          icon: 'mdi-note-search',
+          icon: 'mdi-cog',
           link: (this as any).getLink('basic-settings'),
         },
         {
           title: 'Menadżer pytań',
-          icon: 'mdi-account-cog',
+          icon: 'mdi-ballot',
           link: (this as any).getLink('question-manager'),
         },
         {
           title: 'Parametry czasowe',
-          icon: 'mdi-account-cog',
+          icon: 'mdi-clock-time-four',
           link: (this as any).getLink('time-parameters'),
         },
         {
           title: 'Dostęp do testu',
-          icon: 'mdi-account-cog',
+          icon: 'mdi-share-variant',
           link: (this as any).getLink('test-access'),
         },
         {
           title: 'Wyniki',
-          icon: 'mdi-account-cog',
+          icon: 'mdi-equalizer',
           link: (this as any).getLink('exam-results'),
         },
       ],
