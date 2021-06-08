@@ -81,10 +81,16 @@
 <script lang="ts">
 import Vue from 'vue'
 
+interface Exam {
+  name: string
+  description: string
+  link: string
+}
+
 export default Vue.extend({
   name: 'ExamManager',
   data: () => ({
-    wantedExams: '',
+    wantedExams: '' as string,
     allExams: [
       {
         name: 'C# Quiz 1',
@@ -107,8 +113,8 @@ export default Vue.extend({
         description: 'Grid & flexbox',
         link: '#',
       },
-    ],
-    examsToRender: [],
+    ] as Exam[],
+    examsToRender: [] as Exam[],
   }),
   watch: {
     wantedExams(val) {
