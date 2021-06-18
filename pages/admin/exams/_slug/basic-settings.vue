@@ -1,5 +1,5 @@
 <template>
-  <div>basic settings</div>
+  <BasicSettings />
 </template>
 
 <script lang="ts">

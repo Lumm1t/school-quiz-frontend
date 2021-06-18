@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <v-card class="mb-5">
       <v-card-title>
         <h1>Menadżer testów</h1>
@@ -75,7 +75,7 @@
         </v-card>
       </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">

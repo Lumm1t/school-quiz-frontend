@@ -1,5 +1,5 @@
 <template>
-  <div>question manager</div>
+  <QuestionManager />
 </template>
 
 <script lang="ts">

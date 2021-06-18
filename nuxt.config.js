@@ -27,6 +27,9 @@ export default {
     '~/components/atoms',
     '~/components/molecules',
     '~/components/organisms',
+    '~/components/organisms/admin',
+    '~/components/organisms/admin/exam',
+    '~/components/organisms/quiz',
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules

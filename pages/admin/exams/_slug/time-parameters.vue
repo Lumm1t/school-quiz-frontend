@@ -1,5 +1,5 @@
 <template>
-  <div>time parameters</div>
+  <TimeParameters />
 </template>
 
 <script lang="ts">
