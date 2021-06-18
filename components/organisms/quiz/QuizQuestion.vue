@@ -34,7 +34,7 @@
             v-model="answers[currentQuestionIndex].answer"
             :label="answer"
             :value="i"
-            class="ma-0 pa-0"
+            hide-details="auto"
           ></v-checkbox>
         </v-container>
 
