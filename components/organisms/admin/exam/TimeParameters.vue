@@ -1,6 +1,8 @@
 <template>
   <v-card>
-    <v-card-title>Parametry czasowe</v-card-title>
+    <v-card-title>
+      <h1>Parametry czasowe</h1>
+    </v-card-title>
 
     <v-card-text>
       Limit czasowy na każde pytanie występujące w teście (podany w sekundach):
