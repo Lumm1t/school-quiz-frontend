@@ -1,5 +1,5 @@
 <template>
-  <div>add question</div>
+  <AddQuestion />
 </template>
 
 <script lang="ts">

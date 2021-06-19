@@ -20,7 +20,10 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/vuex-persist.client.js'],
+  plugins: [
+    '~/plugins/vuex-persist.client.js',
+    { src: '~/plugins/tiptap-vuetify', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
@@ -72,6 +75,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['vuetify/lib', 'tiptap-vuetify'],
     babel: {
       plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]],
     },
