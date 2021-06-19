@@ -32,14 +32,14 @@
         {{ question.question }}
 
         <!-- single -->
-        <v-radio-group v-if="question.type === 'single'" disabled>
+        <v-radio-group v-if="question.type === 'single'" readonly>
           <v-radio
             v-for="(answer, i) in question.answers"
             :key="i"
             :label="answer"
             :value="i"
             :style="
-              question.correctAnswer === i ? 'background-color: lightgreen' : ''
+              question.correctAnswer === i ? 'background-color: green' : ''
             "
             class="pa-1"
           ></v-radio>
@@ -56,10 +56,10 @@
             hide-details="auto"
             :style="
               question.correctAnswer.includes(i)
-                ? 'background-color: lightgreen'
+                ? 'background-color: green'
                 : ''
             "
-            disabled
+            readonly
           ></v-checkbox>
         </v-container>
 
@@ -67,7 +67,7 @@
         <div
           v-if="question.type === 'text'"
           class="pa-1 mt-3"
-          style="background-color: lightgreen"
+          style="background-color: green"
         >
           Możliwe odpowiedzi: {{ [...question.correctAnswer].join(', ') }}
         </div>
