@@ -24,7 +24,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/vuetify": "^1.12.1",
-    "core-js": "^3.15.2",
+    "core-js": "^3.16.0",
     "nuxt": "^2.15.7",
     "vuex-persist": "^3.1.3"
   },
